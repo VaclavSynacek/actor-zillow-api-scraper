@@ -3,34 +3,11 @@
     "type": "object",
     "schemaVersion": 1,
     "properties": {
-        "type": {
-            "title": "Type",
-            "type": "string",
-            "description": "Property for sale/rent",
-            "default": "sale",
-            "enum": [
-                "sale",
-                "fsbo",
-                "rent"
-            ],
-            "enumTitles": [
-                "For sale",
-                "For sale by owner",
-                "For rent"
-            ]
-        },
         "startUrls": {
             "title": "Start URLs",
             "type": "array",
             "editor": "requestListSources",
             "description": "List of URLs that will be scraped or crawled. Can be main website URL, category/search URLs or detail/product URLs."
-        },
-        "maxLevel": {
-            "title": "Max zoom level",
-            "type": "integer",
-            "minimum": 0,
-            "prefill": 20,
-            "description": "Maximum map splitting level"
         },
         "maxItems": {
             "title": "Max items",

@@ -258,6 +258,7 @@ Apify.main(async () => {
             if(!mapResults){throw 'No map results at ' + JSON.stringify(qs.mapBounds);}
 
             // Extract home data from mapResults
+            input.maxLevel = 20;
             const thr = input.splitThreshold || 500;
             if(mapResults.length < thr || (input.maxLevel && (request.userData.splitCount || 0) >= input.maxLevel)){
                 console.log('Found ' + mapResults.length + ' homes, extracting data...');
