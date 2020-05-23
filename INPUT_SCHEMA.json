@@ -52,12 +52,6 @@
             "editor": "textfield",
             "description": "Oldest date allowed in results"
         },
-        "simple": {
-            "title": "Simple results",
-            "type": "boolean",
-            "description": "Return only a subset of possible result attributes.",
-            "default": true
-        },
         "extendOutputFunction": {
             "title": "Extend output function",
             "type": "string",
