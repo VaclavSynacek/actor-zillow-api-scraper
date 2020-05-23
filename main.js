@@ -185,13 +185,14 @@ Apify.main(async () => {
 
     // Parse extendOutpudFunction
     let extendOutputFunction = null;
-    if(input.extendOutputFunction){
-        try{extendOutputFunction = eval(input.extendOutputFunction);}
-        catch(e){throw new Error(`extendOutputFunction is not a valid JavaScript! Error: ${e}`);}
-        if(typeof extendOutputFunction !== "function"){
-            throw new Error(`extendOutputFunction is not a function! Please fix it or use just default output!`)
-        }
+
+    extendOutputFunction = (data) => {
+    return {
+        lastTaxPaid: data.property.taxHistory[0].taxPaid,
+        pricePerArea: data.property.price/data.property.livingArea,
+        monthlyPayment: 'Calculation needs to be supplied',
     }
+}
 
   attributes = {
     "address":true,

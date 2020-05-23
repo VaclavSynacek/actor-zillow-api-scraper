@@ -52,14 +52,6 @@
             "editor": "textfield",
             "description": "Oldest date allowed in results"
         },
-        "extendOutputFunction": {
-            "title": "Extend output function",
-            "type": "string",
-            "editor": "javascript",
-            "description": "A function which result will get merged with the default result",
-            "prefill": "(data) => {\n    return {};\n}",
-            "sectionCaption": "Advanced options"
-        },
         "proxyConfiguration": {
             "title": "Proxy configuration",
             "type": "object",
