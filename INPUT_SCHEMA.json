@@ -9,6 +9,13 @@
             "editor": "requestListSources",
             "description": "List of URLs that will be scraped or crawled. Can be main website URL, category/search URLs or detail/product URLs."
         },
+         "averageTaxes": {
+            "title": "Average Taxes",
+            "type": "integer",
+            "minimum": 0,
+            "prefill": 300,
+            "description": "Average taxes that will be used for mortgage calculations"
+        },
         "maxItems": {
             "title": "Max items",
             "type": "integer",

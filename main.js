@@ -187,10 +187,28 @@ Apify.main(async () => {
     let extendOutputFunction = null;
 
     extendOutputFunction = (data) => {
-    return {
+  
+      const averageTaxes = input.averageTaxes;
+      const Offer = data.property.price * 0.8;
+      const downPayment = Offer * 0.2;
+      const loadBalnace = Offer - downPayment;
+      const monthlyPayment = (loadBalnace * 0.0053) + averageTaxes;
+      const cashFlow = data.property.rentZestimate - monthlyPayment;
+      const downPlusClosing = (data.property.price * 0.035) + downPayment;
+      const initialMonths = downPlusClosing + (3 * monthlyPayment);
+    
+
+      return {
         lastTaxPaid: data.property.taxHistory[0].taxPaid,
         pricePerArea: data.property.price/data.property.livingArea,
-        monthlyPayment: 'Calculation needs to be supplied',
+        Offer,
+        downPayment,
+        loadBalnace,
+        monthlyPayment,
+        cashFlow,
+        downPlusClosing,
+        initialMonths,
+
     }
 }
 
