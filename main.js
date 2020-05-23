@@ -169,8 +169,8 @@ Apify.main(async () => {
     Apify.events.on('migrating', data => Apify.setValue('STATE', state));
 
     // Check input
-    if(!(input.search && input.search.trim().length > 0) && !input.startUrls){
-        throw new Error('Either "search" or "startUrls" attribute has to be set!');
+    if(!input.startUrls){
+        throw new Error('"startUrls" attribute has to be set!');
     }
     
     // Initialize minimum time
@@ -214,14 +214,6 @@ Apify.main(async () => {
 
     // Create RequestQueue
     const requestQueue = await Apify.openRequestQueue();
-    if(input.search){
-        const term = input.search.trim().replace(/,(\s*)/g,'-').replace(/\s+/, '+').toLowerCase();
-        //const term = encodeURIComponent(input.search.trim());
-        const baseUrl = 'https://www.zillow.com/homes/';
-        await requestQueue.addRequest({
-            url: baseUrl + term + (input.type === 'rent' ? '/rentals' : '')
-        });
-    }
     if(input.startUrls){
         for(const sUrl of input.startUrls){
             const request = (typeof sUrl === 'string') ? {url: sUrl} : sUrl;

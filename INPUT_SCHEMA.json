@@ -3,13 +3,6 @@
     "type": "object",
     "schemaVersion": 1,
     "properties": {
-        "search": {
-            "title": "Search",
-            "type": "string",
-            "editor": "textfield",
-            "prefill": "Los Angeles",
-            "description": "Query to search on Zillow.com"
-        },
         "type": {
             "title": "Type",
             "type": "string",
