@@ -193,10 +193,21 @@ Apify.main(async () => {
         }
     }
 
-    // Toggle showing only a subset of result attriutes
-    if(input.simple){
-        attributes = {"address":true,"bedrooms":true,"bathrooms":true,"price":true,"yearBuilt":true,"longitude":true,"latitude":true,"description":true,"livingArea":true,"currency":true,"hdpUrl":true,"hugePhotos":true};
-    }
+  // Toggle showing only a subset of result attriutes
+  if(input.simple){
+    attributes = {
+      "address":true,
+      "bedrooms":true,
+      "bathrooms":true,
+      "price":true,
+      "description":true,
+      "livingArea":true,
+      "currency":true,
+      "daysOnZillow":true,
+      "zestimate":true,
+      "rentZestimate":true,
+      "hdpUrl":true};
+  }
 
     // Intercept sample QueryID
     console.log('Extracting initial settings...');
